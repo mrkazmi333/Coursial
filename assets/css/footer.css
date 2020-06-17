@@ -1,0 +1,6 @@
+footer {
+  display: flex;
+  background-color: grey;
+  align-items: center; }
+  footer div {
+    padding-left: 20px; }
