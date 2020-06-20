@@ -4,10 +4,11 @@
         <a href="/">
             <h4>Home</h4>
         </a>
-        <a href="/users/profile">
-            <h4>Profile</h4>
-        </a>
-        
+        <%if(locals.user){%>
+            <a href="/users/profile/<%= user.id %>">
+                <h4>Profile</h4>
+            </a>
+        <%}%>
     </div>
     
 </footer>

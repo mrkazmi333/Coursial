@@ -7,7 +7,7 @@ const passport = require('passport');
 const usersContoller = require('../controllers/users_controller');
 // const postsController = require('../controllers/posts_controller');
 
-router.get('/profile',passport.checkAuthentication, usersContoller.profile);
+router.get('/profile/:id',passport.checkAuthentication, usersContoller.profile);
 
 // router.get('/posts', postsController.posts);
 
@@ -27,8 +27,3 @@ router.get('/sign-out', usersContoller.destroySession );
 module.exports = router;
 
 
-//this sigin router is just for rendering the basic sigin page..
-//i havent created the createSession thing yet
-//u need to do that
-//but in the lecture video it was working wihtout doing that
-//let me see
