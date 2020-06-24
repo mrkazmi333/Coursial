@@ -1,23 +1,26 @@
-<li>
+<!-- <link rel="stylesheet" href="/css/post.css"> -->
+
+<li class="each-post-li">
     <p>
+        
+        <h4 class="user-name-on-post">
+            <%= post.user.name %>
+        </h4>
+
+        <p class="post-content"><%= post.content %></p>
         <% if(locals.user && locals.user.id == post.user.id) { %>
         <small>
-            <a href="/posts/destroy/<%= post.id %>">XXX</a>
+            <a class="delete-post" href="/posts/destroy/<%= post.id %>">Delete Post</a>
         </small>
         <% } %>
-        <%= post.content %>
-        <br>
-        <small>
-            <%= post.user.name %>
-        </small>
 
     </p>
     <div class="post-comments">
         <% if(locals.user){ %>
-            <form action="/comments/create" method="POST">
-                <input type="text" name="content" placeholder="Type here to add comment..." required>
+            <form class="comment-form" action="/comments/create" method="POST">
+                <input class="comment-input" type="text" name="content" placeholder="Type here to add comment..." required>
                 <input type="hidden" name="post" value="<%= post._id %>">
-                <input type="submit" value="Add Comment">
+                <input class="add-comment-button" type="submit" value="Add Comment">
             </form>
         <% } %>
 

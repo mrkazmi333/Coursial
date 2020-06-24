@@ -1,0 +1,62 @@
+.each-post-li {
+  list-style: none;
+  background-color: #242526;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  word-break: break-all; }
+  .each-post-li .user-name-on-post {
+    font-size: 0.9rem; }
+  .each-post-li .post-content {
+    font-size: 0.9rem;
+    margin-bottom: 10px; }
+  .each-post-li .delete-post {
+    text-decoration: none;
+    font-size: 0.7rem;
+    background-color: lightgray;
+    color: black;
+    padding: 3px;
+    border-radius: 25px 25px; }
+  .each-post-li .post-comments .comment-form {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    justify-content: space-between; }
+    .each-post-li .post-comments .comment-form .comment-input {
+      background-color: #3a3b3c;
+      border: none;
+      width: 75%;
+      height: 25px;
+      margin-right: 5px;
+      padding-left: 10px;
+      color: lightgrey;
+      border: none;
+      border-radius: 25px 25px; }
+    .each-post-li .post-comments .comment-form .add-comment-button {
+      border: none;
+      border-radius: 25px 25px;
+      font-size: 0.6rem;
+      font-weight: bold;
+      cursor: pointer; }
+    .each-post-li .post-comments .comment-form .add-comment-button:hover {
+      background-color: #272792;
+      color: lightgrey; }
+  .each-post-li .post-comments .post-comments-list .comment-list {
+    list-style: none;
+    background-color: #3a3b3c;
+    margin-bottom: 10px;
+    padding: 10px;
+    word-break: break-all;
+    border-radius: 5px; }
+    .each-post-li .post-comments .post-comments-list .comment-list .comment-user-name {
+      font-size: 0.8rem; }
+    .each-post-li .post-comments .post-comments-list .comment-list .comment-content {
+      font-size: 0.8rem;
+      margin-bottom: 5px; }
+    .each-post-li .post-comments .post-comments-list .comment-list .delete-comment {
+      text-decoration: none;
+      font-size: 0.7rem;
+      background-color: lightgray;
+      color: black;
+      padding: 3px;
+      border-radius: 25px 25px; }

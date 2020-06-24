@@ -4,20 +4,20 @@
 
     <ul>
         <% if(locals.user) { %>
-            <li>
+            <li class="header-things">
                 <a href="/users/profile/<%= user.id %>">
                     <%= user.name %>
                 </a>
             </li>
-            <li>
+            <li class="header-things">
                 <a href="/users/sign-out">Sign Out</a>
             </li>
         <% } else{ %>
-            <li>
+            <li class="header-things">
                 <a href="/users/sign-in">Sign In</a>
             </li>
 
-            <li>
+            <li class="header-things">
                 <a href="/users/sign-up">Sign Up</a>
             </li>
             

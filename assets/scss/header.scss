@@ -1,5 +1,6 @@
 header{
     display: flex;
+    width: 100%;
     justify-content: space-between;
     background-color: blueviolet;
     font-family: Arial, Helvetica, sans-serif;
@@ -16,5 +17,12 @@ header{
         list-style: none;
         padding: 10px;
         color: white;
+    }
+    .header-things a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+    .header-things a:hover{
+        color: lightgray;
     }
 }

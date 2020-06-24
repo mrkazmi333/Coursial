@@ -1,0 +1,49 @@
+#home-container {
+  display: flex;
+  background-color: #18191a;
+  justify-content: space-around;
+  color: lightgrey; }
+  #home-container #feed-posts {
+    width: 50vw;
+    padding: 10px; }
+    #home-container #feed-posts #new-post-form {
+      background-color: #242526;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px; }
+      #home-container #feed-posts #new-post-form #post-text-area {
+        background-color: #3a3b3c;
+        border: none;
+        width: 90%;
+        height: 50px;
+        border-radius: 25px 25px;
+        padding: 15px;
+        margin: 10px;
+        resize: none;
+        color: lightgrey; }
+      #home-container #feed-posts #new-post-form #post-submit-button {
+        width: 80%;
+        border: none;
+        border-radius: 5px;
+        border: 5px;
+        margin-bottom: 10px;
+        cursor: pointer; }
+      #home-container #feed-posts #new-post-form #post-submit-button:hover {
+        background-color: #272792;
+        color: lightgrey; }
+    #home-container #feed-posts #posts-list-container {
+      padding: 10px; }
+  #home-container #user-friends {
+    max-width: 35vw;
+    padding: 10px;
+    border-left: 1px solid lightgrey;
+    height: 100vh; }
+    #home-container #user-friends .user-name-headings {
+      margin: 5px 0px; }
+    #home-container #user-friends .user-name-headings a {
+      text-decoration: none;
+      color: lightgrey;
+      font-size: 0.8rem; }
+    #home-container #user-friends .user-name-headings a:hover {
+      color: #1316cc; }
