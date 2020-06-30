@@ -12,12 +12,25 @@ module.exports.create = async function(req, res){
                 post: req.body.post,
                 user: req.user._id
             });
-                //Handle error
-            post.comments.push(comment);
-            req.flash('success', 'Comment Done Successfully');
 
+            post.comments.push(comment);
             post.save();
-    
+
+            if(req.xhr){
+                //Similar for comments to fetch the user's id!
+                comment = await comment.populate('user', 'name').execPopulate();
+
+                return res.status(200).json({
+                    data: {
+                        comment: comment
+                    },
+                    message: "Comment created"
+                });
+            }
+           
+            
+            req.flash('success', 'Comment Done Successfully');
+            
             res.redirect('/');
         }
     }catch(err){
@@ -40,6 +53,16 @@ module.exports.destroy = async function(req, res){
     
                 let post = await Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}});
                 
+                //send the comment id whichwas deleted back to the views
+
+                if(req.xhr){
+                    return res.status(200).json({
+                        data: {
+                            comment_id: req.params.id
+                        },
+                        message: "Post Deleted"
+                    });
+                }
                 req.flash('success', 'Comment Deleted');
 
                 return res.redirect('back');
@@ -50,7 +73,7 @@ module.exports.destroy = async function(req, res){
 
     }catch(err){
         req.flash('error', err);
-        return res.redirect('back');
+        return res.redirect('back');; 
     }
     
 }

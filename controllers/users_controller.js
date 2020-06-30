@@ -49,6 +49,7 @@ module.exports.signIn = function(req, res){
 //get the signup data
 module.exports.create = function(req, res){
     if(req.body.password!= req.body.confirm_password){
+        req.flash('error', 'Passwords did not matched!');
         return res.redirect('back');
     }
 
