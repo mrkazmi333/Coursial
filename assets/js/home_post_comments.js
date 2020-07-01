@@ -35,6 +35,14 @@ class PostComments{
                     $(' .comment-input').val('');
                     $(`#post-comments-${postId}`).prepend(newComment);
                     pSelf.deleteComment($(' .delete-comment-button', newComment));
+
+                    new Noty({
+                        theme: 'relax',
+                        text: "Comment Published",
+                        type: 'success',
+                        layout: 'topRight',
+                        timeout: 1500
+                    }).show();
                 }, error: function(error){
                     console.log(error.responseText);
                 }
@@ -78,6 +86,13 @@ class PostComments{
                 success: function(data){
                 
                     $(`#comment-${data.data.comment_id}`).remove();
+                    new Noty({
+                        theme: 'relax',
+                        text: "Comment Deleted",
+                        type: 'success',
+                        layout: 'topRight',
+                        timeout: 1500
+                    }).show();
                 }, error: function(error){
                     console.log(error.responseText);
                 }
