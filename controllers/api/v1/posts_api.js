@@ -1,4 +1,6 @@
 const Post = require('../../../models/post');
+
+
 const Comment = require('../../../models/comment');
 module.exports.index = async function(req, res){
 
@@ -16,6 +18,7 @@ module.exports.index = async function(req, res){
     return res.json(200, {
         message: "List of Posts v1",
         posts: posts
+        
     });
 }
 
@@ -26,7 +29,7 @@ module.exports.destroy = async function(req, res){
         //.id means converting the object id into string
         
 
-        // if(post.user == req.user.id){
+        if(post.user == req.user.id){
             post.remove();
 
             await Comment.deleteMany({post: req.params.id});
@@ -36,10 +39,11 @@ module.exports.destroy = async function(req, res){
             return res.json(200, {
                 message: "Post and associated comments deleted"
             })
-        // }else{
-        //     req.flash('error','You cannot Delete this Post');
-        //     return res.redirect('back');
-        // }
+        }else{
+           return res.json(401, {
+               message: "You cannot delete this post!!!"
+           })
+        }
 
     }catch(err){
         // req.flash('error', err);
