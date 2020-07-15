@@ -96,7 +96,7 @@ module.exports.create = function(req, res){
                 return res.redirect('/users/sign-in');
             });
         }else{
-            req.flash('success', 'You have signed up, login to continue!');
+            // req.flash('success', 'You have signed up, login to continue!');
             return res.redirect('back');
         }
 
