@@ -83,13 +83,7 @@ app.use('/', require('./routes'));
 
 
 app.listen(port, function(err){
-    // layout pehle work kar rha tha
-    //yes what was the lst thing u did
-    //mtlb
-    //last xhhez konsi ki thi jiske bad stop kar dia working 
-    //ye doubt jis lecture m raise kra usi k baad s
-    //tumne alag file bnayi bas post ki , uske abd na
-    //aur friends list bhi add kri ok
+   
     if(err){
         console.log(`Error in running the server: ${err}`);
     }
